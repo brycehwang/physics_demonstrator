@@ -133,12 +133,12 @@ public class CameraActivity extends Activity {
                 int columnIndex = c.getColumnIndex(filePath[0]);
                 String picturePath = c.getString(columnIndex);
 
-                Context context = getApplicationContext();
+                /*Context context = getApplicationContext();
                 CharSequence text = "picturePath";
                 int duration = Toast.LENGTH_SHORT;
 
                 Toast toast = Toast.makeText(context, text, duration);
-                toast.show();
+                toast.show();*/
 
                 c.close();
                 Bitmap thumbnail = (BitmapFactory.decodeFile(picturePath));
