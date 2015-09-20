@@ -42,18 +42,18 @@ public class MainActivity extends ActionBarActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    public void openAbout(){
+    public void openAbout(View view){
         Intent intent = new Intent(this, AboutActivity.class);
         startActivity(intent);
     }
 
-    public void openSettings(){
+    public void openSettings(View view){
         Intent intent = new Intent(this, SettingsActivity.class);
         startActivity(intent);
     }
 
-    public void openInstructions(){
-        Intent intent = new Intent(this, AboutActivity.class);
+    public void openInstructions(View view){
+        Intent intent = new Intent(this, InstructionsActivity.class);
         startActivity(intent);
     }
 

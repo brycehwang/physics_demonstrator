@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.view.View;
 
 
 public class AboutActivity extends ActionBarActivity {
@@ -37,7 +38,7 @@ public class AboutActivity extends ActionBarActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    public void openMainMenu(){
+    public void openMainMenu(View view){
         Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
     }

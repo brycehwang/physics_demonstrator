@@ -14,14 +14,14 @@
         android:text="@string/getstarted"
         android:id="@+id/button4"
         android:gravity="center"
-        android:onClick="dispatchTakePictureIntent"
+        android:onClick="openCameraActivity"
         android:textSize = "32sp"
         android:layout_alignParentBottom="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
-        android:layout_marginBottom="93dp"
-        android:layout_marginRight="100dp"
-        android:layout_marginLeft="100dp" />
+        android:layout_marginBottom="40dp"
+        android:layout_marginRight="75dp"
+        android:layout_marginLeft="75dp"/>
 
     <TextView
         android:layout_width="fill_parent"

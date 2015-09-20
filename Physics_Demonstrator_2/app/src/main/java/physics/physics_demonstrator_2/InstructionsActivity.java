@@ -10,6 +10,7 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.Toast;
 
 import java.io.File;
@@ -48,9 +49,14 @@ public class InstructionsActivity extends ActionBarActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    static final int REQUEST_TAKE_PHOTO = 1;
+    public void openCameraActivity(View view){
+        Intent intent = new Intent(this, CameraActivity.class);
+        startActivity(intent);
+    }
 
-    private void dispatchTakePictureIntent() {
+    /*static final int REQUEST_TAKE_PHOTO = 1;*/
+
+    /*private void dispatchTakePictureIntent() {
         Intent takePictureIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
         // Ensure that there's a camera activity to handle the intent
         if (takePictureIntent.resolveActivity(getPackageManager()) != null) {
@@ -85,13 +91,13 @@ public class InstructionsActivity extends ActionBarActivity {
         File storageDir = Environment.getExternalStoragePublicDirectory(
                 Environment.DIRECTORY_PICTURES);
         File image = File.createTempFile(
-                imageFileName,  /* prefix */
-                ".jpg",         /* suffix */
-                storageDir      /* directory */
+                imageFileName,  *//* prefix *//*
+                ".jpg",         *//* suffix *//*
+                storageDir      *//* directory *//*
         );
 
         // Save a file: path for use with ACTION_VIEW intents
         mCurrentPhotoPath = "file:" + image.getAbsolutePath();
         return image;
-    }
+    }*/
 }

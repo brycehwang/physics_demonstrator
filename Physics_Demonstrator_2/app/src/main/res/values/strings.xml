@@ -26,5 +26,6 @@
     <string name="takepicture">1) Take a picture</string>
     <string name="funphysics">2) Have fun with physics!</string>
     <string name="title_activity_camera">CameraActivity</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 </resources>
