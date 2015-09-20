@@ -1,19 +1,69 @@
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
-    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin" android:orientation="horizontal">
+    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin" android:orientation="horizontal"
+    android:paddingTop="?android:attr/actionBarSize" android:background="@drawable/background_start"
+    >
 
     <!--<TextView android:text="@string/hello_world" android:layout_width="wrap_content"-->
         <!--android:layout_height="wrap_content" />-->
-    <EditText android:id="@+id/edit_message"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:hint="@string/edit_message" />
 
     <Button
         android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:text="@string/start"
+        android:onClick="openInstructions"
+        android:gravity="center"
+        android:id="@+id/button1"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="100dp"
+        android:layout_marginRight="100dp"
+        android:layout_marginTop="100dp"
+        android:layout_marginBottom="20dp"></Button>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/settings"
+        android:id="@+id/button2"
+        android:onClick="openSettings"
+        android:layout_below="@+id/button1"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="100dp"
+        android:layout_marginRight="100dp"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/about"
+        android:id="@+id/button3"
+        android:onClick="openAbout"
+        android:layout_below="@+id/button2"
+        android:layout_centerHorizontal="true"
+        android:paddingLeft="0dp"
+        android:paddingRight="0dp"
+        android:layout_marginLeft="100dp"
+        android:layout_marginRight="100dp"
+        android:layout_marginTop="20dp" />
+
+    <TextView
         android:layout_width="wrap_content"
-        android:text="@string/button_send"
-        android:onClick="sendMessage"
-        ></Button>
-</LinearLayout>
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="@string/demonstrator"
+        android:id="@+id/textView1"
+        android:layout_above="@+id/button1"
+        android:layout_centerHorizontal="true"
+        android:focusableInTouchMode="false" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="@string/physics"
+        android:id="@+id/textView2"
+        android:layout_above="@+id/textView2"
+        android:layout_centerHorizontal="true" />
+
+
+</RelativeLayout>
