@@ -102,7 +102,7 @@ public class CameraActivity extends Activity {
                     bitmap = BitmapFactory.decodeFile(f.getAbsolutePath(),
                             bitmapOptions);
 
-                    viewImage.setImageBitmap(bitmap);
+                    /*viewImage.setImageBitmap(bitmap);*/
 
                     String path = android.os.Environment
                             .getExternalStorageDirectory()
@@ -139,9 +139,9 @@ public class CameraActivity extends Activity {
                 pathofinterest = picturePath;
 
                 c.close();
-                Bitmap thumbnail = (BitmapFactory.decodeFile(picturePath));
-                Log.w("path of image from gallery......******************.........", picturePath+"");
-                viewImage.setImageBitmap(thumbnail);
+//                Bitmap thumbnail = (BitmapFactory.decodeFile(picturePath));
+                Log.w("path of image from gallery......", picturePath+"");
+//                viewImage.setImageBitmap(thumbnail);
             }
         }
         if (pathofinterest != null) {
