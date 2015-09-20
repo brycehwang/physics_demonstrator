@@ -59,6 +59,14 @@
             android:label="@string/title_activity_camera"
             android:parentActivityName=".MainActivity" >
         </activity>
+        <activity
+            android:name=".VictoryActiity"
+            android:label="@string/title_activity_victory_actiity" >
+        </activity>
+        <activity
+            android:name=".VictoryActivity"
+            android:label="@string/title_activity_victory" >
+        </activity>
     </application>
 
 </manifest>

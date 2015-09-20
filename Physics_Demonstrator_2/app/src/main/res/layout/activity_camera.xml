@@ -4,6 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="@drawable/background_start"
     android:padding="10dp" >
 
     <LinearLayout
@@ -16,7 +17,9 @@
             android:id="@+id/btnSelectPhoto"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Select Photo" />
+            android:text="Select Photo"
+            android:layout_marginRight="80dp"
+            android:layout_marginLeft="80dp" />
 
     </LinearLayout>
 
@@ -31,6 +34,17 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:src="@drawable/placeholder" />
+
+        <Button
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/finished"
+            android:gravity="center"
+            android:onClick="openVictoryActivity"
+            android:id="@+id/btnMoveOn"
+            android:layout_marginTop="100dp"
+            android:layout_marginRight="80dp"
+            android:layout_marginLeft="80dp" />
 
     </LinearLayout>
 

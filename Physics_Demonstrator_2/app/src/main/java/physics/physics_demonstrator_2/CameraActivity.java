@@ -28,6 +28,8 @@ public class CameraActivity extends Activity {
 
     ImageView viewImage;
     Button b;
+    String pathofinterest;
+    public final static String PATH_MESSAGE = "physics.physics_demonstrator2.PATH_MESSAGE";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -82,6 +84,7 @@ public class CameraActivity extends Activity {
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        String pathofinterest = "";
         super.onActivityResult(requestCode, resultCode, data);
         if (resultCode == RESULT_OK) {
             if (requestCode == 1) {
@@ -108,6 +111,7 @@ public class CameraActivity extends Activity {
                     f.delete();
                     OutputStream outFile = null;
                     File file = new File(path, String.valueOf(System.currentTimeMillis()) + ".jpg");
+                    pathofinterest = file.getAbsolutePath();
                     try {
                         outFile = new FileOutputStream(file);
                         bitmap.compress(Bitmap.CompressFormat.JPEG, 85, outFile);
@@ -132,19 +136,42 @@ public class CameraActivity extends Activity {
                 c.moveToFirst();
                 int columnIndex = c.getColumnIndex(filePath[0]);
                 String picturePath = c.getString(columnIndex);
-
-                /*Context context = getApplicationContext();
-                CharSequence text = "picturePath";
-                int duration = Toast.LENGTH_SHORT;
-
-                Toast toast = Toast.makeText(context, text, duration);
-                toast.show();*/
+                pathofinterest = picturePath;
 
                 c.close();
                 Bitmap thumbnail = (BitmapFactory.decodeFile(picturePath));
                 Log.w("path of image from gallery......******************.........", picturePath+"");
                 viewImage.setImageBitmap(thumbnail);
             }
+        }
+        if (pathofinterest != null) {
+            setPathOfInterest(pathofinterest);
+        }else{
+            setPathOfInterest("");
+        }
+    }
+
+    public void setPathOfInterest(String poi){
+        pathofinterest = poi;
+    }
+
+    public String getPathOfInterest(){
+        return pathofinterest;
+    }
+
+    public void openVictoryActivity(View view){
+        String pathofinterest = getPathOfInterest();
+        if (pathofinterest == "" || pathofinterest == null){
+            Context context = getApplicationContext();
+            CharSequence text = "Please select an image!";
+            int duration = Toast.LENGTH_SHORT;
+
+            Toast toast = Toast.makeText(context, text, duration);
+            toast.show();
+        }else {
+            Intent intent = new Intent(this, VictoryActivity.class);
+            intent.putExtra(PATH_MESSAGE, pathofinterest);
+            startActivity(intent);
         }
     }
 }
